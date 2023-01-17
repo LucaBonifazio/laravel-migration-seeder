@@ -9,9 +9,9 @@ class MainController extends Controller
 {
 
     public function main() {
-        $table = Trains::all();
+        $trains = Trains::all();
         return view('main', [
-            'table' => $table,
+            'trains' => $trains,
         ]);
     }
 }

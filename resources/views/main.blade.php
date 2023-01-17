@@ -2,15 +2,15 @@
 
 @section('content')
     <div>
-        {{$table[0]['agency']}}
+        {{$trains[0]['agency']}}
     </div>
     <div>
-        {{$table[0]['departure_station']}}
+        {{$trains[0]['departure_station']}}
     </div>
     <div>
-        {{$table[0]['arrival_station']}}
+        {{$trains[0]['arrival_station']}}
     </div>
     <div>
-        {{$table[0]['departure_time']}}
+        {{$trains[0]['departure_time']}}
     </div>
 @endsection

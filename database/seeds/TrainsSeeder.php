@@ -1,6 +1,7 @@
 <?php
 
 use App\Trains;
+use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 
 class TrainsSeeder extends Seeder
@@ -10,24 +11,20 @@ class TrainsSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    // {
-    //     $trains = [
-
-    //     ];
-
-    //     foreach ($trains as $train) {
-    //         $newTrain = new Trains();
-    //         $newTrain->agency = $train['Trenitalia'];
-    //         $newTrain->departure_station = $train['Torino'];
-    //         $newTrain->arrival_station = $train['Roma'];
-    //         $newTrain->departure_time = $train['10.50'];
-    //         $newTrain->arrival_time = $train['16.30'];
-    //         $newTrain->code = $train['1adrfg6548dfs'];
-    //         $newTrain->n_carriages = $train['180'];
-    //         $newTrain->on_time = $train['binary 2'];
-    //         $newTrain->deleted = $train['binary 1'];
-    //         $newTrain->save();
-    //     }
-    // }
+    public function run(Faker $faker)
+    {
+        for ($i=0; $i < 10; $i++) {
+            $newTrain = new Trains();
+            $newTrain->agency = $faker->company;
+            $newTrain->departure_station = $faker->city;
+            $newTrain->arrival_station = $faker->city;
+            $newTrain->departure_time = $faker->date('Y-m-d');
+            $newTrain->arrival_time = $faker->date('Y-m-d');
+            $newTrain->code = $faker->swiftBicNumber;
+            $newTrain->n_carriages = $faker->randomDigitNotNull;
+            $newTrain->on_time = $faker->company ;
+            $newTrain->deleted = $faker->company ;
+            $newTrain->save();
+        }
+    }
 }
