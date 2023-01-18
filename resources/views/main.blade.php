@@ -1,16 +1,18 @@
 @extends('guest.layouts.base')
 
 @section('content')
+    @foreach ($trains as $train)
     <div>
-        {{$trains[0]['agency']}}
+        {{$train['company']}} <br>
+        {{$train['departure_station']}} <br>
+        {{$train['arrival_station']}} <br>
+        {{$train['departure_time']}} <br>
+        {{$train['arrival_time']}} <br>
+        {{$train['code']}} <br>
+        {{$train['n_carriages']}} <br>
+        {{$train['on_time']}} <br>
+        {{$train['deleted']}}
     </div>
-    <div>
-        {{$trains[0]['departure_station']}}
-    </div>
-    <div>
-        {{$trains[0]['arrival_station']}}
-    </div>
-    <div>
-        {{$trains[0]['departure_time']}}
-    </div>
+    <br>
+    @endforeach
 @endsection

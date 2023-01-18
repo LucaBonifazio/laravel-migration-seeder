@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Trains;
+use App\Train;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
 
     public function main() {
-        $trains = Trains::all();
+        $trains = Train::all();
         return view('main', [
             'trains' => $trains,
         ]);
